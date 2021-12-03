@@ -1,0 +1,435 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -ms-user-select: none; 
+    -moz-user-select: none; 
+    -khtml-user-select: none; 
+    -webkit-user-select: none;
+    outline: none;
+}
+
+.mainBlock {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-color: hsla(210, 30%, 95%, 1);
+}
+
+.menu {
+    width: 200px;
+    height: 80vh;
+    position: relative;
+    left: 40px;
+    top: 10vh;
+    border: 1px solid hsla(0, 0%, 85%, 1);
+    padding: 10px;
+    background-color: hsla(0, 0%, 100%, 1);
+    z-index: 5;
+}
+
+.sel, .sel2 {
+    border: none;
+    border-bottom: 2px solid hsla(0, 0%, 80%, 1);
+    color: hsla(0, 0%, 40%, 1);
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.map {
+    width: auto;
+    height: 80vh;
+    position: absolute;
+    left: 280px;
+    right: 40px;
+    top: 10vh;
+    border: 1px solid hsla(0, 0%, 85%, 1);
+    z-index: 5;
+}
+
+.sel3, .selMoney {
+    border: none;
+    border-bottom: 2px solid hsla(0, 0%, 80%, 1);
+    color: hsla(0, 0%, 40%, 1);
+    width: auto;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.card {
+    width: 400px;
+    height: 210px;
+    border: 1px solid hsla(0, 0%, 85%, 1);
+    position: absolute;
+    bottom: 5vh;
+    left: 50%;
+    transform: translate(-50%);
+    padding: 10px;
+    border-radius: 10px;
+    opacity: 0;
+    display: flex;
+    background-color: hsla(0, 0%, 100%, 1);
+}
+
+.cardGo {
+    width: 400px;
+    height: 210px;
+    border: 1px solid hsla(0, 0%, 85%, 1);
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    padding: 10px;
+    border-radius: 10px;
+    bottom: 45vh;
+    opacity: 1;
+    transition: bottom 1.5s, opacity 2.5s;
+    background-color: hsla(0, 0%, 100%, 1);
+    z-index: 10;
+}
+
+.cardGoLeft {
+    width: 400px;
+    height: 210px;
+    border: 1px solid hsla(0, 0%, 85%, 1);
+    position: absolute;
+    left: 16%;
+    transform: translate(-50%);
+    padding: 10px;
+    border-radius: 10px;
+    bottom: 45vh;
+    opacity: 0;
+    transition: left 1.5s, opacity 1.1s;
+    background-color: hsla(0, 0%, 100%, 1);
+    z-index: 10;
+}
+
+.cardGoRight {
+    width: 400px;
+    height: 210px;
+    border: 1px solid hsla(0, 0%, 85%, 1);
+    position: absolute;
+    left: 84%;
+    transform: translate(-50%);
+    padding: 10px;
+    border-radius: 10px;
+    bottom: 45vh;
+    opacity: 0;
+    transition: left 1.5s, opacity 1.1s;
+    background-color: hsla(0, 0%, 100%, 1);
+    z-index: 10;
+}
+
+.butOne {
+    width: 160px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid hsla(0, 0%, 85%, 1);
+    background-color: hsla(0, 50%, 50%, 1);
+    color: white;
+    border-radius: 5px;
+}
+
+.butOne:hover {
+    cursor: pointer;
+    background-color: hsla(0, 50%, 40%, 1);
+}
+
+.butTwo {
+    width: 160px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid hsla(0, 0%, 85%, 1);
+    background-color: hsla(210, 50%, 50%, 1);
+    color: white;
+    border-radius: 5px;
+}
+
+.butTwo:hover {
+    cursor: pointer;
+    background-color: hsla(210, 50%, 40%, 1);
+}
+
+.twoBut {
+    width: 100%;
+    display: flex; 
+    justify-content: space-between;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%);
+    padding: 0 10px;
+}
+
+.img {
+    width: 100%;
+    height: 110px; 
+    display: block; 
+    margin: auto; 
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.bigPhoto {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: hsla(0, 0%, 0%, 0.8);
+    display: none;
+    z-index: 30;
+}
+
+.bigPhoto img {
+    height: 80vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+}
+
+.cardInfo {
+    display: flex; 
+    align-items: start;
+    color: hsla(0, 0%, 40%, 1);
+    font-size: 18px;
+}
+
+.cardInfo a {
+    color: hsla(0, 0%, 40%, 1);
+}
+
+.cardInfo a:hover {
+    color: hsla(0, 0%, 20%, 1);
+}
+
+.butCard {
+    width: 100%;
+    color: hsla(0, 0%, 40%, 1);
+    border: 1px solid hsla(0, 0%, 85%, 1);
+    padding: 5px 10px;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.butCard:hover {
+    cursor: pointer;
+    background-color: hsla(0, 0%, 93%, 1);
+}
+
+.butCard:active {
+    background-color: hsla(0, 0%, 80%, 1);
+}
+
+.butCardFirst {
+    width: 100%;
+    color: hsla(0, 0%, 40%, 1);
+    border: 1px solid hsla(0, 0%, 85%, 1);
+    padding: 5px 10px;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.butCardFirst:hover {
+    cursor: pointer;
+    background-color: hsla(0, 0%, 93%, 1);
+}
+
+.butCardFirst:active {
+    background-color: hsla(0, 0%, 80%, 1);
+}
+
+.text {
+    color: hsla(0, 0%, 40%, 1);
+    font-size: 18px;
+}
+
+.listTast {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: hsla(0, 0%, 40%, 1);
+    font-size: 18px;
+}
+
+.point {
+    width: 100px;
+    height: 100px;
+    font-size: 80px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    bottom: 10vh;
+    opacity: 0;
+    transform: translate(-50%);
+    z-index: 20;
+}
+
+.pointUp {
+    width: 100px;
+    height: 100px;
+    font-size: 80px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    bottom: 55vh;
+    transform: translate(-50%);
+    opacity: 1;
+    transition: bottom 1.5s, opacity 2.5s;
+    z-index: 20;
+}
+
+.none {
+    display: none;
+}
+
+.noneD {
+    display: none;
+}
+
+.down {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 180px;
+}
+
+@media screen and (max-width: 480px) {
+    .mainBlock {
+        width: 100%;
+        height: auto;
+        position: static;
+        margin: auto;
+    }
+    .menu {
+        width: 100%;
+        height: 80vh;
+        border: 1px solid hsla(0, 0%, 85%, 1);
+        padding: 10px;
+        background-color: hsla(0, 0%, 100%, 1);
+        z-index: 5;
+        position: static;
+        margin: auto;
+    }
+    
+    .map {
+        width: 100%;
+        height: 50vh;
+        border: 1px solid hsla(0, 0%, 85%, 1);
+        z-index: 5;
+        position: static;
+        margin: auto;
+    }
+    
+    .down {
+        position: static;
+        width: 100%;
+        margin: auto;
+        transform: translate(0);
+    }
+    
+    .card {
+        width: 96%;
+        height: 210px;
+        border: 1px solid hsla(0, 0%, 85%, 1);
+        position: absolute;
+        bottom: 5vh;
+        left: 50%;
+        transform: translate(-50%);
+        padding: 10px;
+        border-radius: 10px;
+        opacity: 0;
+        display: flex;
+        background-color: hsla(0, 0%, 100%, 1);
+    }
+
+    .cardGo {
+        width: 96%;
+        height: 210px;
+        border: 1px solid hsla(0, 0%, 85%, 1);
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        padding: 10px;
+        border-radius: 10px;
+        bottom: 45vh;
+        opacity: 1;
+        transition: bottom 1.5s, opacity 2.5s;
+        background-color: hsla(0, 0%, 100%, 1);
+        z-index: 10;
+    }
+
+    .cardGoLeft {
+        width: 96%;
+        height: 210px;
+        border: 1px solid hsla(0, 0%, 85%, 1);
+        position: absolute;
+        left: 16%;
+        transform: translate(-50%);
+        padding: 10px;
+        border-radius: 10px;
+        bottom: 45vh;
+        opacity: 0;
+        transition: left 1.5s, opacity 1.1s;
+        background-color: hsla(0, 0%, 100%, 1);
+        z-index: 10;
+    }
+
+    .cardGoRight {
+        width: 96%;
+        height: 210px;
+        border: 1px solid hsla(0, 0%, 85%, 1);
+        position: absolute;
+        left: 84%;
+        transform: translate(-50%);
+        padding: 10px;
+        border-radius: 10px;
+        bottom: 45vh;
+        opacity: 0;
+        transition: left 1.5s, opacity 1.1s;
+        background-color: hsla(0, 0%, 100%, 1);
+        z-index: 10;
+    }
+    
+    .point {
+        width: 100px;
+        height: 100px;
+        font-size: 60px;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        left: 50%;
+        bottom: 10vh;
+        opacity: 0;
+        transform: translate(-50%);
+        z-index: 20;
+    }
+
+    .pointUp {
+        width: 100px;
+        height: 100px;
+        font-size: 60px;
+        color: black;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        left: 50%;
+        bottom: 55vh;
+        transform: translate(-50%);
+        opacity: 1;
+        transition: bottom 1.5s, opacity 2.5s;
+        z-index: 20;
+    }
+}
