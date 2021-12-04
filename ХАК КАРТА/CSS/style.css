@@ -17,12 +17,12 @@
 }
 
 .menu {
-    width: 200px;
+    width: 204px;
     height: 80vh;
     position: relative;
     left: 40px;
     top: 10vh;
-    border: 1px solid hsla(0, 0%, 85%, 1);
+    border: 2px solid hsla(0, 0%, 55%, 1);
     padding: 10px;
     background-color: hsla(0, 0%, 100%, 1);
     z-index: 5;
@@ -37,15 +37,14 @@
     font-size: 16px;
 }
 
-.map {
-    width: auto;
-    height: 80vh;
+#map {
+    width: 100%;
+    height: 100vh;
     position: absolute;
-    left: 280px;
-    right: 40px;
-    top: 10vh;
+    left: 0;
+    top: 0;
     border: 1px solid hsla(0, 0%, 85%, 1);
-    z-index: 5;
+    z-index: 2;
 }
 
 .sel3, .selMoney {
@@ -186,6 +185,69 @@
     z-index: 30;
 }
 
+.rate {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: hsla(0, 0%, 0%, 0.8);
+    display: none;
+    z-index: 30;
+}
+
+.rule {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: hsla(0, 0%, 0%, 0.8);
+    display: none;
+    z-index: 30;
+}
+
+.ruleMenu {
+    width: 70%;
+    height: 80vh;
+    position: absolute;
+    font-size: 18px;
+    color: hsla(0, 0%, 50%, 1);
+    display: block;
+    top: 10vh;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: white;
+}
+
+.inner {
+    width: 200px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.rateMenu {
+    width: 70%;
+    height: 80vh;
+    position: absolute;
+    font-size: 50px;
+    color: hsla(0, 0%, 50%, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 10vh;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: white;
+}
+
+#rateSet {
+    color: hsla(210, 50%, 50%, 1);
+}
+
 .bigPhoto img {
     height: 80vh;
     position: absolute;
@@ -324,7 +386,7 @@
         margin: auto;
     }
     
-    .map {
+    #map {
         width: 100%;
         height: 50vh;
         border: 1px solid hsla(0, 0%, 85%, 1);
@@ -432,4 +494,12 @@
         transition: bottom 1.5s, opacity 2.5s;
         z-index: 20;
     }
+}
+
+.buttonAdd {
+    padding: 0 10px;
+}
+
+#coordSaturdayOne, #coordSaturdayTwo {
+    width: 90px;
 }

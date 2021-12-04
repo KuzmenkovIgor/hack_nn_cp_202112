@@ -7,9 +7,11 @@
         <meta name="author" content="Peter Lastochkin">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="CSS\style.css">
+        <script src="https://api-maps.yandex.ru/2.0/?load=package.full,package.geoObjects&amp,package.route&amp;lang=ru-RU&amp;apikey=6ed3c880-7f55-4610-9a8a-0e20076a85ac" type="text/javascript"></script>
         <title>Мусорная карта</title>
     </head>
     <body id="body">
+        <div id="map"></div>
         <div class="mainBlock">
             <div class="menu">
                 <select class="sel">
@@ -24,6 +26,7 @@
                     <option>Разбитые дороги</option>
                     <option>Разное</option>
                 </select>
+                <div class="butCardFirst" id="setRoute">проложить маршрут</div>
                 <div class="butCardFirst noneD" onclick="cardUp()">посмотреть задание</div>
                 <span class="text noneD">Принятое задание:</span>
                 <div class="listTast"></div>
@@ -34,20 +37,18 @@
                     <div class="butCard" onclick="enter('enter')">войти</div>
                 </div>
                 <div class="down noneD">
+                    <div class="butCard" id="commonBut" onclick="rate('open')">рейтинг</div>
                     <span class="text">Имя: </span><span class="text name">User</span><br><br>
                     <div class="butCard" onclick="enter('exit')">выйти</div>
                 </div>
             </div>
-            <div class="map">
-                <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A571800dcfaaaccdaf714c51273d55b94538fbb26bf5dfbfff202737d9a6a102f&amp;width=100%&amp;height=100%&amp;lang=ru_RU&amp;scroll=true"></script>
-            </div>
             <div class="card">
                 <div class="cardInfo">
                     <div class="info" style="width: 60%; padding-top: 10px;">
-                        <span><a href="https://yandex.ru/maps/2/saint-petersburg/geo/dvortsovaya_ploshchad/1520636939/?ll=30.315477%2C59.938897&source=wizgeo&utm_medium=maps-desktop&utm_source=serp&z=16.86" target="_blank">Улица Помойки, дом 8.</a></span><br>
+                        <span><a href="https://yandex.ru/maps/2/saint-petersburg/geo/dvortsovaya_ploshchad/1520636939/?ll=30.315477%2C59.938897&source=wizgeo&utm_medium=maps-desktop&utm_source=serp&z=16.86" target="_blank">Улица Какая-то там, дом Неизвестен.</a></span><br>
                         <span>Тел: нет</span><br>
                         <span>Задание: убрать мусор</span><br>
-                        <span>Награда: 50 рублей</span>
+                        <span>Рейтинг +3</span>
                     </div>
                     <div style="width: 40%;">
                         <img src="IMG/trash.jpg" alt="photo" class="img" onclick="bigPhotoOpen('open')">
@@ -61,8 +62,28 @@
             <div class="bigPhoto" onclick="bigPhotoOpen('closed')">
                 <img src="" alt="bigPhoto" class="bigPh">
             </div>
+            <div class="rate" onclick="rate('closed')">
+                <div class="rateMenu">Ваш рейтинг:&ensp;<span id="rateSet">45</span></div>
+            </div>
+            <div class="rule" onclick="rule('closed')">
+                <div class="ruleMenu">
+                    <div class="inner">
+                    Координаты субботника:<br>
+                    <input type="text" id="coordSaturdayOne"><br>
+                    <input type="text" id="coordSaturdayTwo"><br>
+                    <input class="buttonAdd" type="button" value="установить"><br><br>
+                    Дать задание:<br>
+                    <input type="text" id="street" placeholder="Улица"><br>
+                    <input type="text" id="tel" placeholder="Телефон"><br>
+                    <input type="text" id="home" placeholder="Задание"><br>
+                    <input type="text" id="rateSetUser" placeholder="Рейтинг"><br>
+                    <input class="buttonAdd" type="button" value="добавить">
+                    </div>
+                </div>
+            </div>
             <div class="point"></div>
         </div>
         <script src="JS\mainFunction.js"></script>
+        <script src="JS\map.js"></script>
     </body>
 </html>

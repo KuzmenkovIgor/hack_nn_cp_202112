@@ -95,16 +95,51 @@ function bigPhotoOpen(e){
 function enter(e){
     let enterH = document.querySelectorAll('.enterH');
     let noneD = document.querySelectorAll('.noneD');
+    let setRoute = document.querySelector('#setRoute');
+    let name = document.querySelector('#name');
+    let commonBut = document.querySelector('#commonBut');
     
     if (e == 'enter'){
         enterH[0].style.display = 'none';
+        setRoute.style.display = 'none';
         for (let i = 0; i < noneD.length; i++){
             noneD[i].style.display = 'block';
         }
     } else {
         enterH[0].style.display = 'block';
+        setRoute.style.display = 'block';
         for (let i = 0; i < noneD.length; i++){
             noneD[i].style.display = 'none';
         }
+    }
+    
+    if (name.value == 'admin'){
+        commonBut.setAttribute('onclick', "rule('open')");
+        commonBut.innerHTML = 'управление';
+        noneD[0].style.display = 'none';
+        noneD[1].style.display = 'none';
+    } else {
+        commonBut.setAttribute('onclick', "rate('open')");
+        commonBut.innerHTML = 'рейтинг';
+    }
+}
+
+function rate(e){
+    let photo = document.querySelectorAll('.rate');
+    
+    if (e == 'open'){
+        photo[0].style.display = 'block';
+    } else {
+        photo[0].style.display = 'none';
+    }
+}
+
+function rule(e){
+    let rule = document.querySelectorAll('.rule');
+    
+    if (e == 'open'){
+        rule[0].style.display = 'block';
+    } else {
+        rule[0].style.display = 'none';
     }
 }
