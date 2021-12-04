@@ -11,6 +11,7 @@ function cancel(){
     
     listTast[0].innerHTML = '';
     none[0].style.display = 'none';
+    none[1].style.display = 'none';
     
     pointUse('cancel');
 }
@@ -45,6 +46,7 @@ function cardRight(){
     card[0].classList.remove('cardGo');
     listTast[0].innerHTML = info[0].innerHTML;
     none[0].style.display = 'block';
+    none[1].style.display = 'block';
     
     setTimeout(()=>{
         card[0].classList.add('card');
